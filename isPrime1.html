@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>isPrime</title>
+</head>
+<body>
+  <form>
+	<input type="number" id = "num" min = 1>
+	<button  type = "button" onclick = "isPrime1()">Check</button>
+  </form>	
+    <p id="divisor"></p>
+	<p id="result"></p>
+	
+	<script>
+		function isPrime1(){
+		 var n = document.getElementById("num").value;
+		 var result = "Is Prime"
+		 var divisor = 3;
+		 var limit = Math.sqrt(n)
+		 
+		 if(n%2==0 || n == 1){
+		  result = "Not a Prime"
+		 }
+		  else if(n == 2 || n == 3){
+		      result = " Is Prime";
+		  }
+		  else{
+			while(divisor <= limit){
+				if(n % divisor == 0){
+					result = "Not Prime";
+					break;
+				}
+				else{
+					divisor+=2;
+				}
+			}
+		  }
+		  document.getElementById("result").innerHTML = result;
+		
+	}
+	</script>
+</body>
+</html>

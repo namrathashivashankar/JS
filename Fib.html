@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>isPrime</title>
+</head>
+<body>
+  <form>
+	<input type="number" id = "num" min = 1>
+	<button  type = "button" onclick = "fib()">Check</button>
+  </form>	
+
+	<p id="result"></p>
+	
+	<script>
+		function fib(){
+			var n = document.getElementById("num").value;
+			var fibs = [];
+			var c  = 2;
+			var fib = 0;
+	
+			if(n == 1){
+			fibs.push(0);
+			}
+			else{
+				fibs[0] = 0;
+				fibs[1] = 1;
+			
+				while(c < n){
+					fibs[c]= fibs[c-1] + fibs[c-2];
+					c++;
+			}
+		}	
+			
+			document.getElementById("result").innerHTML = fibs;
+			
+		
+		}
+	</script>
+</body>
+</html>

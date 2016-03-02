@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Image SlideShow</title>
+</head>
+<body>
+<div id = "container">
+  <form>
+	<img src = "3.jpg" height = "500px" width = "500px" id = "imgs">
+	<button type = "button" onclick = "slide(this)" id = "prev">Previous</button>
+	<button  type = "button" onclick = "slide(this)" id ="next">Next</button>
+	<p id = "demo"></p>
+  </form>	
+</div>
+	<p id="result"></p>
+	
+	<script>
+		var index = 0;
+		function slide(dom){
+			var i = document.getElementById("imgs");
+			var imgsA = ["l2.jpg","ligh.jpg","college1.JPG","college2.JPG","college3.JPG"];
+			if(dom.id == "next"){
+				if(index < imgsA.length)
+					i.src = imgsA[index++];
+				else{
+					i.src= "3.jpg";
+					index = 0;
+				}		
+			}
+			else{
+				if(index > 0)
+					i.src = imgsA[--index];
+				else{
+					i.src = "3.jpg";
+					index = imgsA.length;
+				}
+			}
+
+		}
+	</script>
+</body>
+</html>

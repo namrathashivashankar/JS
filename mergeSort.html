@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title>isPrime</title>
+</head>
+<body>
+  <form>
+	<input type="text" id = "num1" >
+	<input type="text" id = "num2" >
+	<button  type = "button" onclick = "mergeSort()">Check</button>
+  </form>	
+
+	<p id="result"></p>
+	
+	<script>
+		function mergeSort(){
+			var n1 = document.getElementById("num1").value;
+			var a = n1.split(" ");
+			
+			var n2 = document.getElementById("num2").value;
+			var b = n2.split(" ");
+			
+			var result = [];
+			var i = 0;
+			var j = 0 ;
+			var k = 0;
+			
+			if(b.length == 0)
+				result = a.slice();
+			else if(a.lenght == 0)
+				result = b.slice();
+			else{
+				while(a.length!=0 && b.length!=0){
+					if(parseInt(a[i]) < parseInt(b[j])){
+						result.push(a.shift());
+					}
+					else{
+						result.push(b.shift());
+					}
+				}
+				if(a.length == 0)
+				  result = result.concat(b);
+				else
+					result = result.concat(a);
+			}
+			
+			document.getElementById("result").innerHTML = result.toString();
+			
+		
+		}
+	</script>
+</body>
+</html>

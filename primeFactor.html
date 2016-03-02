@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>isPrime</title>
+</head>
+<body>
+  <form>
+	<input type="number" id = "num" min = 1>
+	<button  type = "button" onclick = "primeFactor()">Check</button>
+  </form>	
+
+	<p id="result"></p>
+	
+	<script>
+		function primeFactor(){
+			var n = document.getElementById("num").value;
+			factors = [];
+			divisor = 2;
+			
+			while(n > 2){
+				if(n % divisor == 0 ){
+				    factors.push(divisor);
+					n = n/divisor;
+				}else{
+					divisor++;
+				}
+				
+			}
+			
+			document.getElementById("result").innerHTML = factors;
+			
+		
+		}
+	</script>
+</body>
+</html>
